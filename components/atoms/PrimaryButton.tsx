@@ -1,19 +1,23 @@
 import { Ionicons } from "@expo/vector-icons";
 import React from "react";
-import { StyleSheet, Text, TouchableOpacity } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, ViewStyle } from "react-native";
 
 export default function PrimaryButton({
-  handleRestart,
+  onclick,
+  text,
+  style
 }: {
-  handleRestart: () => void;
+  onclick: () => void;
+  text:string;
+  style?: ViewStyle
 }) {
   return (
     <TouchableOpacity
-      style={[styles.button, styles.primaryButton]}
-      onPress={handleRestart}
+      style={[styles.button, styles.primaryButton, style]}
+      onPress={onclick}
     >
       <Ionicons name="refresh" size={20} color="white" />
-      <Text style={styles.buttonText}>Restart Quiz</Text>
+      <Text style={styles.buttonText}>{text}</Text>
     </TouchableOpacity>
   );
 }

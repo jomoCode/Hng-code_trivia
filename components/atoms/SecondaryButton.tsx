@@ -1,17 +1,21 @@
 import React from "react";
-import { StyleSheet, Text, TouchableOpacity } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, ViewStyle } from "react-native";
 
 export default function SecondaryButton({
-  handleBackToScore,
+  onClick,
+  text,
+  style
 }: {
-  handleBackToScore: () => void;
+  onClick: () => void;
+  text:string;
+  style?:ViewStyle
 }) {
   return (
     <TouchableOpacity
-      style={[styles.button, styles.secondaryButton]}
-      onPress={handleBackToScore}
+      style={[styles.button, styles.secondaryButton, style]}
+      onPress={onClick}
     >
-      <Text style={styles.buttonText}>Back to Score</Text>
+      <Text style={styles.buttonText}>{text}</Text>
     </TouchableOpacity>
   );
 }
