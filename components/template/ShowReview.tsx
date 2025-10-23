@@ -8,7 +8,7 @@ type ShowReviewProp = {
   handleBackToScore: () => void;
   handleRestart: () => void;
   Questions: QuestionType[];
-  answers: never[];
+  answers: number[];
 };
 export const ShowReview = ({
   handleBackToScore,
